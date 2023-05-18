@@ -15,7 +15,7 @@ const CreateContact = ({ handleSubmit }) => {
 			<main className='formmain'>
 				<form onSubmit={(e) => handleSubmit(e, input)}>
 					<div className='formin'>
-						<label htmlFor=''>Contact Name</label>
+						<label>Contact Name</label>
 						<input
 							type='text'
 							value={input.cname}
@@ -25,7 +25,7 @@ const CreateContact = ({ handleSubmit }) => {
 						/>
 					</div>
 					<div className='formin'>
-						<label htmlFor=''>Email</label>
+						<label>Email</label>
 						<input
 							type='text'
 							value={input.email}
@@ -35,7 +35,7 @@ const CreateContact = ({ handleSubmit }) => {
 						/>
 					</div>
 					<div className='formin'>
-						<label htmlFor=''>Phone Number</label>
+						<label>Phone Number</label>
 						<input
 							type='number'
 							value={input.mobile}

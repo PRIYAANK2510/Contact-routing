@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import ContactList from '../components/ContactList';
+import EditContact from '../components/EditContact';
 
-const Home = ({ contacts }) => {
+const Home = ({ contacts, handleDelete, handleEdit, isEdit, setIsEdit }) => {
 	return (
 		<>
 			<header>
@@ -12,7 +13,18 @@ const Home = ({ contacts }) => {
 				</Link>
 			</header>
 			<main>
-				<ContactList contacts={contacts} />
+				<ContactList
+					contacts={contacts}
+					handleDelete={handleDelete}
+					setIsEdit={setIsEdit}
+				/>
+				{isEdit !== 0 && (
+					<EditContact
+						setIsEdit={setIsEdit}
+						contact={contacts.filter((contact) => contact.cid === isEdit)[0]}
+						handleEdit={handleEdit}
+					/>
+				)}
 			</main>
 		</>
 	);

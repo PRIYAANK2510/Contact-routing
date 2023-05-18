@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { FaUserEdit } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
-const Contact = ({ contact }) => {
+const Contact = ({ contact, handleDelete, setIsEdit }) => {
 	return (
 		<div className='contact'>
 			<div>
@@ -11,8 +11,16 @@ const Contact = ({ contact }) => {
 			</div>
 
 			<div>
-				<MdDelete className='icon' />
-				<FaUserEdit className='icon' />
+				<MdDelete
+					className='icon'
+					onClick={() => {
+						handleDelete(contact.cid);
+					}}
+				/>
+				<FaUserEdit
+					className='icon'
+					onClick={() => setIsEdit(contact.cid)}
+				/>
 			</div>
 		</div>
 	);
