@@ -1,0 +1,60 @@
+.contact {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	border: 2px solid black;
+	margin-top: 1rem;
+	padding: 0.6rem;
+	border-radius: 0.4rem;
+}
+.header {
+	text-align: center;
+}
+.add-btn {
+	padding: 0.7rem;
+	background-color: green;
+	border-radius: 0.4rem;
+	color: white;
+	cursor: pointer;
+}
+
+.icon {
+	padding: 0.4rem;
+	font-size: 1.7rem;
+	cursor: pointer;
+}
+.icon:active {
+	transform: scale(0.9);
+}
+.formmain {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 2rem;
+	padding: 1rem;
+}
+form {
+	min-width: 400px;
+	border: 1px solid black;
+	border-radius: 1rem;
+	background-color: whitesmoke;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.4rem;
+}
+.formin {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+input {
+	padding: 1rem;
+}
+.sbmt-btn {
+	padding: 1rem;
+	background-color: green;
+	border-radius: 0.4rem;
+	color: white;
+}
