@@ -1,0 +1,23 @@
+.contact {
+	margin-top: 1rem;
+	padding: 0.7rem;
+	border: 1px solid black;
+	border-radius: 0.7rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.contactheading {
+	font-weight: 700;
+	color: brown;
+}
+
+.deleteicn {
+	font-size: 1.6rem;
+	cursor: pointer;
+}
+.editicn {
+	font-size: 1.6rem;
+	margin-left: 1rem;
+	cursor: pointer;
+}

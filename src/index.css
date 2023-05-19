@@ -1,109 +1,87 @@
-.contact {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 1rem;
-	border: 2px solid black;
-	margin-top: 1rem;
-	padding: 0.6rem;
-	border-radius: 0.4rem;
-}
-.header {
-	text-align: center;
-}
-.add-btn {
-	padding: 0.7rem;
-	background-color: green;
-	border-radius: 0.4rem;
-	color: white;
-	cursor: pointer;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-.icon {
-	padding: 0.4rem;
-	font-size: 1.7rem;
-	cursor: pointer;
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
 }
-.icon:active {
-	transform: scale(0.9);
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
 }
-.formmain {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 2rem;
-	padding: 1rem;
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
 }
-form {
-	min-width: 400px;
-	border: 1px solid black;
-	border-radius: 1rem;
-	background-color: whitesmoke;
-	padding: 3rem;
-	display: flex;
-	flex-direction: column;
-	gap: 1.4rem;
+html,
+body {
+	font-family: 'Poppins', sans-serif;
 }
-.formin {
-	display: flex;
-	flex-direction: column;
-	gap: 0.4rem;
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
 }
-input {
-	padding: 1rem;
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
 }
-.sbmt-btn {
-	padding: 1rem;
-	background-color: green;
-	border-radius: 0.4rem;
-	color: white;
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
 }
-.editContact {
-	position: absolute;
-	inset: 0;
-	z-index: 10;
-	background-color: rgba(0, 0, 0, 0.7);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
 }
-.editform {
-	min-width: 450px;
-	border-radius: 1rem;
-	border: 1px solid black;
-	background-color: rgb(210, 210, 210);
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-	padding: 2rem;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
-.editdiv {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+input[type='number'] {
+	appearance: textfield;
+	-moz-appearance: textfield;
 }
-.editdivbtn {
-	display: flex;
-	gap: 1rem;
-	justify-content: flex-end;
-}
-.updateedit {
-	background-color: rgb(85, 196, 90);
-	padding: 1rem;
-	border-radius: 0.4rem;
-	cursor: pointer;
-	border: 1px solid hsl(123, 48%, 10%);
-}
-.updateedit:active {
-	transform: scale(0.95);
-}
-.canceledit {
-	background-color: rgb(215, 110, 110);
-	padding: 1rem;
-	border-radius: 0.4rem;
-	cursor: pointer;
-	border: 1px solid hsl(0, 57%, 10%);
-}
-.canceledit:active {
-	transform: scale(0.95);
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }

@@ -1,52 +1,63 @@
-import { useState } from 'react';
-
 /* eslint-disable react/prop-types */
-const CreateContact = ({ handleSubmit }) => {
+import { useContext, useState } from 'react';
+import FormInput from '../components/FormInput/FormInput';
+import DataContext from '../context/DataContext';
+import styles from './CreateContact.module.css';
+
+const CreateContact = () => {
+	const { handleSubmit } = useContext(DataContext);
+
 	const [input, setInput] = useState({
 		cname: '',
 		email: '',
-		mobile: 0,
+		mobile: '',
 	});
 	return (
 		<>
-			<header>
-				<h1 className='header'>Create Contact</h1>
+			<header className={styles.header}>
+				<h1 className={styles.title}>Create Contact</h1>
 			</header>
-			<main className='formmain'>
-				<form onSubmit={(e) => handleSubmit(e, input)}>
-					<div className='formin'>
-						<label>Contact Name</label>
-						<input
-							type='text'
-							value={input.cname}
-							onChange={(e) => {
-								setInput({ ...input, cname: e.target.value });
-							}}
-						/>
-					</div>
-					<div className='formin'>
-						<label>Email</label>
-						<input
-							type='text'
-							value={input.email}
-							onChange={(e) => {
-								setInput({ ...input, email: e.target.value });
-							}}
-						/>
-					</div>
-					<div className='formin'>
-						<label>Phone Number</label>
-						<input
-							type='number'
-							value={input.mobile}
-							onChange={(e) => {
-								setInput({ ...input, mobile: e.target.value });
-							}}
-						/>
-					</div>
+			<main className={styles.main}>
+				<form
+					className={styles.form}
+					onSubmit={(e) => handleSubmit(e, input)}
+				>
+					<FormInput
+						label={'Contact Name'}
+						type={'text'}
+						value={input.cname}
+						onChange={(e) => {
+							setInput({ ...input, cname: e.target.value });
+						}}
+						errorMessage={'Required Field and no number allowed'}
+						pattern="\b([A-ZÀ-ÿ-,a-z. ']+[ ]*)+"
+						required={true}
+					/>
+					<FormInput
+						label={'Email'}
+						type={'email'}
+						value={input.email}
+						onChange={(e) => {
+							setInput({ ...input, email: e.target.value });
+						}}
+						errorMessage={'Invalid Email Address'}
+						pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
+						required={true}
+					/>
+					<FormInput
+						label={'Mobile'}
+						type={'number'}
+						value={input.mobile}
+						onChange={(e) => {
+							setInput({ ...input, mobile: e.target.value });
+						}}
+						errorMessage={'10-Digit Mobile number required'}
+						pattern='^[0-9]{10}$'
+						required={true}
+					/>
 					<button
+						className={styles.submitbtn}
 						type='submit'
-						className='sbmt-btn'
 					>
 						Create Contact
 					</button>

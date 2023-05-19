@@ -1,0 +1,40 @@
+.popupwindow {
+	position: absolute;
+	inset: 0;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.formwindow {
+	min-width: 500px;
+	background-color: whitesmoke;
+	padding: 1.5rem;
+	border: 1px solid black;
+	border-radius: 1rem;
+}
+.btnsection {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.6rem;
+}
+.cancelbtn {
+	background-color: rgb(201, 104, 104);
+	padding: 0.6rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+.cancelbtn:active {
+	transform: scale(0.95);
+}
+.editbtn {
+	background-color: rgb(75, 179, 75);
+	padding: 0.6rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+.editbtn:active {
+	transform: scale(0.95);
+}

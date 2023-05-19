@@ -1,0 +1,21 @@
+.header {
+	margin: 0rem 1rem;
+	padding: 1rem;
+}
+.title {
+	text-align: center;
+}
+.button {
+	background-color: rgb(52, 105, 52);
+	color: white;
+	padding: 0.7rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+.button:active {
+	transform: scale(0.95);
+}
+.main {
+	margin: 0rem 1rem;
+	padding: 1rem;
+}

@@ -3,32 +3,18 @@
 import { Route, Routes } from 'react-router-dom';
 import CreateContact from '../pages/CreateContact';
 import Home from '../pages/Home';
+import routes from './routes.json';
 
-const PageRoutes = ({
-	contacts,
-	handleSubmit,
-	handleDelete,
-	handleEdit,
-	isEdit,
-	setIsEdit,
-}) => {
+const PageRoutes = () => {
 	return (
 		<Routes>
 			<Route
-				path={'/'}
-				element={
-					<Home
-						contacts={contacts}
-						handleDelete={handleDelete}
-						handleEdit={handleEdit}
-						isEdit={isEdit}
-						setIsEdit={setIsEdit}
-					/>
-				}
+				path={routes.HOME}
+				element={<Home />}
 			/>
 			<Route
-				path={'/create-contact'}
-				element={<CreateContact handleSubmit={handleSubmit} />}
+				path={routes.CREATE_CONTACT}
+				element={<CreateContact />}
 			/>
 		</Routes>
 	);

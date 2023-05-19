@@ -1,30 +1,29 @@
 /* eslint-disable react/prop-types */
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import ContactList from '../components/ContactList';
-import EditContact from '../components/EditContact';
+import Contact from '../components/Contact/Contact';
+import EditContact from '../components/PopUp/EditContact';
+import DataContext from '../context/DataContext';
+import styles from './Home.module.css';
 
-const Home = ({ contacts, handleDelete, handleEdit, isEdit, setIsEdit }) => {
+const Home = () => {
+	const { isEdit, contacts } = useContext(DataContext);
 	return (
 		<>
-			<header>
-				<h1 className='header'>Contact List</h1>
+			<header className={styles.header}>
+				<h1 className={styles.title}>Contact List</h1>
 				<Link to={'/create-contact'}>
-					<button className='add-btn'>Add Contact</button>
+					<button className={styles.button}>Add Contact</button>
 				</Link>
 			</header>
-			<main>
-				<ContactList
-					contacts={contacts}
-					handleDelete={handleDelete}
-					setIsEdit={setIsEdit}
-				/>
-				{isEdit !== 0 && (
-					<EditContact
-						setIsEdit={setIsEdit}
-						contact={contacts.filter((contact) => contact.cid === isEdit)[0]}
-						handleEdit={handleEdit}
+			<main className={styles.main}>
+				{contacts.map((contact, index) => (
+					<Contact
+						key={`contact${index}`}
+						contact={contact}
 					/>
-				)}
+				))}
+				{isEdit !== 0 && <EditContact />}
 			</main>
 		</>
 	);

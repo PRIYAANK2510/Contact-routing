@@ -1,0 +1,33 @@
+.input_group {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem 0;
+}
+.label {
+	font-size: 0.95rem;
+	color: gray;
+	font-style: italic;
+	margin-bottom: 0.5rem;
+}
+.inputbox {
+	padding: 0.7rem;
+	border-radius: 0.6rem;
+}
+.error {
+	margin-top: 0.5rem;
+	text-align: right;
+	color: red;
+	display: none;
+}
+.error::before {
+	content: '*';
+}
+.error::after {
+	content: '*';
+}
+input:invalid[focused='true'] {
+	border: 1px solid red;
+}
+input:invalid[focused='true'] ~ span {
+	display: block;
+}
