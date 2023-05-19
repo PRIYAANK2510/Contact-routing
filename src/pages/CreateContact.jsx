@@ -41,18 +41,18 @@ const CreateContact = () => {
 							setInput({ ...input, email: e.target.value });
 						}}
 						errorMessage={'Invalid Email Address'}
-						pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
+						pattern='.+@[A-Z a-z]+[.]{1}[A-Z a-z]+'
 						required={true}
 					/>
 					<FormInput
 						label={'Mobile'}
-						type={'number'}
+						type={'tel'}
 						value={input.mobile}
 						onChange={(e) => {
 							setInput({ ...input, mobile: e.target.value });
 						}}
 						errorMessage={'10-Digit Mobile number required'}
-						pattern='^[0-9]{10}$'
+						pattern='\d{10}'
 						required={true}
 					/>
 					<button

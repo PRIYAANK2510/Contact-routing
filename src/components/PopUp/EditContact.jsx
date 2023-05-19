@@ -23,7 +23,7 @@ const EditContact = () => {
 					value={objInp.cname}
 					onChange={(e) => setObjInp({ ...objInp, cname: e.target.value })}
 					errorMessage={'Required Field and no number allowed'}
-					pattern="\b([A-ZÀ-ÿ-,a-z. ']+[ ]*)+"
+					pattern="[A-ZÀ-ÿ-,a-z. ']{2,}"
 					required={true}
 				/>
 				<FormInput
@@ -32,16 +32,16 @@ const EditContact = () => {
 					value={objInp.email}
 					onChange={(e) => setObjInp({ ...objInp, email: e.target.value })}
 					errorMessage={'Invalid Email Address'}
-					pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
+					pattern='.+@[A-Z a-z]+[.]{1}[A-Z a-z]+'
 					required={true}
 				/>
 				<FormInput
 					label={'Edit Mobile'}
-					type={'number'}
+					type={'tel'}
 					value={objInp.mobile}
 					onChange={(e) => setObjInp({ ...objInp, mobile: e.target.value })}
 					errorMessage={'10-Digit Mobile number required'}
-					pattern='^[0-9]{10}$'
+					pattern='\d{10}'
 					required={true}
 				/>
 				<div className={styles.btnsection}>
